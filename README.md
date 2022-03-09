@@ -14,7 +14,7 @@ En esta sección tomaremos lo que acabamos de aprender hablando de la notación 
 Comencemos hablando de objetos que hablan de ellos a través de la lente de Big O y el rendimiento. Por lo tanto, son estructuras de datos desordenadas y todo se almacena en pares de clave-valor.
 ```
 let instructor = {
-  firsName: 'kelly',
+	firsName: 'kelly',
 	isIntructor: true,
 	favoriteNumbers: [1,2,3,4]
 }
@@ -23,7 +23,8 @@ Por ejemplo, como este objeto literal que estamos almacenando en una variable ll
 
 ### ¿Cuando utilizar objetos?
 - Cuando no necesitamos orden
-- Cuándo se desea acceso rápido, inserción y extracción, por lo que hay orden pero casi todo lo demás es muy rápido. Cuando decimos rápido, estamos hablando del tiempo constante para la eliminación, inserción y acceso a los datos.
+- Cuándo se desea acceso rápido, inserción y extracción, por lo que hay orden pero casi todo lo demás es muy rápido. 
+- Cuando decimos rápido, estamos hablando del tiempo constante para la eliminación, inserción y acceso a los datos.
 
 Los objetos son muy rápidos.
 - Insertion = O(1)
