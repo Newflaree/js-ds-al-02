@@ -74,4 +74,53 @@ Entonces, en resumen, los objetos son realmente rápidos para casi todo.
 
 
 ## ¿Cuándo son lentos los Arrays?
+Entonces, el gran punto de venta de los Arrays, por supuesto, es que están ordenadas porque hay un orden intrínseco a los datos a diferencia de un objeto donde las cosas flotan en una masa gelatinosa. Y eso a menudo es muy útil si necesitamos un orden, pero puede tener un costo para algunas de las operaciones.
+
+De todos modos, aquí hay dos Arrays diferentes, por supuesto, puede almacenar lo que quiera y hay diferentes tipos de datos. Cada elemento tiene un índice, un valor numérico que le corresponde.
+
+En general, los Arrays se utilizan cuando se necesita orden. Si no necesita orden, entonces probablemente no quiera usar un Array si solo está tratando de almacenar datos aleatorios juntos. Todavía podría usar un Array, pero si realmente está tratando de optimizar el rendimiento, hay otras opciones. E incluso si necesita orden, varemos algunas otras estructuras surgiendo como una lista individualmente vinculada y una lista doblemente vinculada que todavía codifica el orden. Es una estructura de lista donde cada elemento está en un lugar particular y todos están conectados en un orden. Pero a veces pueden funcionar mejor que los Arrays, según lo que necesite. Por lo tanto, los Arrays no son la única estructura de datos de orden en la tierra. Son solo los únicos que obtenemos de forma gratuita en JS, de todos modos, el enlace viene después.
+
+Entonces, cuando necesita un orden, puede usar una variedad, por supuesto, pero a menudo puede tener un costo dependiendo de lo que intenta hacer, especialmente en lo que respecta a la inserción y extracción, puede complicar las cosas. Por lo tanto, acceder a los datos de un Array siempre es muy rápido. Searching - O(N) y Access - O(1).
+
+
+```
+let names = [ 'Michael', 'Melissa', 'Andrea' ];
+//                0         1          2
+```
+Cuando digo acceder, lo que quiero decir es que si tenemos este Array con tres elementos llamados name. Si se pide names[0], eso será muy rápido, es un tiempo constante.
+
+Entonces, una idea erronea que he visto que muchos estudiantes tienen cuando trienes un Array de 10000 elementos y pides el elemento nueve mil, digamos que JS no está pasando por cada elemento al contar 9000 y acceder a cada elemento y luego obtener el que necesita y dárselo. Se podría decir que hay un atajo directo a cada elemento. Si tiene un número, si tiene un índice y la matriz tiene esa longitud, por supuesto, esa es la única condición. Puede saltar inmediatamente a los datos, por lo tanto, no importa cuánto dura el Array. No importa si está mirando el último elemento, el elemento central o el primer elemento, el tiempo es constante.
+
+Así que ahora que está fuera del camino, hablemos de inserción y extracción. Realmente depende de dónde estamos insertando, comencemos con la inserción y tiene que ver con este orden como hemos mencionado. Cada elemento tiene un índice que le corresponde y si quiero agregar algo y decir que quiero agregar el nombre Raj, si lo agrego hasta el final, como haciendo un push sobre el Array, el tiempo constante es O(1) y eso es porque realmente no hay nada. Podemos agregar al final del Array y le damos un nuevo índice. Es algo así como agregar un object, es tiempo constante, es muy simple.
+```
+let names = [ 'Michael', 'Melissa', 'Andrea', 'Raj' ];
+//                0         1          2        3
+```
+
+El problema surge cuando intentamos insertar al comienzo de un Array y la razón de eso tiene que ver con estos índices. Si se intenta inserta a Raj al inicio ya se puede ver qué pasa. En este caso Michael ya no sería el elemento 0 y pasaría a ser el elemento 1. Por lo tanto, tenemos que volver a indexar cada elemento del Array. Esto es simple para un Array de 4 elementos pero si estamos hablando de miles y miles de elementos, reindexar cada uno de ellos no es una tarea trivialj. Entonces, si estámos insertando al comienzo de un Array, estamos hablando de un O(n) del tiempo final porque tenemos que hacer algo una vez por cada elemento.
+```
+let names = [ 'Raj', 'Michael', 'Melissa', 'Andrea' ];
+//              0         1          2        3
+```
+Ahora eso no significa que sea exactamente una operación para cada elemento. La cantidad de tiempo que tarda aproximadamente crece en proporción con el tamaño del Array. Y está bien, así que insertarlo al pricipio es problemático.
+
+Lo mismo ocurre para eliminar desde el pricipio. Si tenemos a Raj al principio, digamos que esta es nuestra configuración. Si eliminamos a Raj, tenemos que volver a indexar nuevamente en la otra dirección que necesitamos para establecer el índice de Michael en adelante, todos bajan uno. Entonces podemos ver cómo esto se vuelve difícil.
+
+- Al momento de agregar o eliminar desde el pricipio de un Array es mejor evaluarlo si se puede. Pero a menudo es significativo agregar al comienzo de un Array. A menos, por supuesto, que sea un Array vacío, en cuyo caso agragar al principio o al final es lo mismo.
+
+- Entonces, hablamos de inserción y extracción. Depende de dónde estamos insertando, siempre insertar o quitar desde el pricipio es peor que agragar al final y eliminar desde el final.
+
+- El acceso es rápido sin importar dónde, si estamos hablando de 10000 elementos, acceder al elemento medio es tan rápido como acceder al segundo elemento y luego buscar lo más rápido que podemos hacer es O(n). Discutiremos esto en la sección de búsqueda, todos escribimos nuestra propia búsqueda básica en JS si estamos hablando de un Array no ordemado donde hay un orden en los datos. Si quisiera saber si hubiera dicho otros 10000 nombres aquí y quisiera saber si Robbie estaba allí, tenemos que verificar potencialmente cada elemento. A medida que la cantidad de elementos crece en ese Array, también lo hace el tiempo potencialmente necesario para encontrar ese elemento. Pasamos mucho tiempo hablando sobre la búsqueda y las posibles optimizaciones que puede hacer específicamente cuando se ordenan sus datos, pero eso surge más tarde.
+
+
+
+
+
+
+
+
+
+
+
+
 
