@@ -112,8 +112,20 @@ Lo mismo ocurre para eliminar desde el pricipio. Si tenemos a Raj al principio, 
 
 - El acceso es rápido sin importar dónde, si estamos hablando de 10000 elementos, acceder al elemento medio es tan rápido como acceder al segundo elemento y luego buscar lo más rápido que podemos hacer es O(n). Discutiremos esto en la sección de búsqueda, todos escribimos nuestra propia búsqueda básica en JS si estamos hablando de un Array no ordemado donde hay un orden en los datos. Si quisiera saber si hubiera dicho otros 10000 nombres aquí y quisiera saber si Robbie estaba allí, tenemos que verificar potencialmente cada elemento. A medida que la cantidad de elementos crece en ese Array, también lo hace el tiempo potencialmente necesario para encontrar ese elemento. Pasamos mucho tiempo hablando sobre la búsqueda y las posibles optimizaciones que puede hacer específicamente cuando se ordenan sus datos, pero eso surge más tarde.
 
+## Big O de los Arrays
 
+Ahora revisaremos algunos de los métodos de Arrays integrados. Hay muchos de ellos y quiero enfatizar que no necesita saber ni memorizar esta información pero espero que tenga sentido cómo llegamos a los números cuando hablamos de la notación Big-O
+- push - O(1)
+- pop - O(1)
+- shift - O(N)
+- unshift - O(N)
+- concat - O(N)
+- slice - O(N)
+- splice - O(N)
+- sort - O(N * logN)
+- forEach/map/reduce/etc - O(N)
 
+Los primeros cuatro que ya hemos discutido tal vez no por su nombre, pero push y pop son constantes. Agregar y eliminar datos al final del Array, ya sea 1 elemento o 10000 o 100000000 elementos es constante
 
 
 
